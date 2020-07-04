@@ -21,7 +21,6 @@
     "express": "^4.17.1",
     "jest": "^26.1.0",
     "response-time": "^2.3.2",
-    "sleep": "^6.2.0",
     "supertest": "^4.0.2"
   }
 }
