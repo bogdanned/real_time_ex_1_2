@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("./app");
+const app = require("./utils/app");
 const { assert } = require("console");
 
 describe("The http server responds fast to user requests regarding the load", () => {

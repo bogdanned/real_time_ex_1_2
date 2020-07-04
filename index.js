@@ -1,4 +1,4 @@
-const app = require("./app");
+const app = require("./utils/app");
 const request = require("supertest");
 
 request(app)
