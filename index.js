@@ -1,9 +1,12 @@
-const http = require("http");
+const app = require("./app");
+const request = require("supertest");
 
-//create a server object:
-http
-  .createServer(function (req, res) {
-    res.write("Hello World!"); //write a response to the client
-    res.end(); //end the response
-  })
-  .listen(8080); //the server object listens on port 8080
+request(app)
+  .get("/fibo?n=41")
+  // .expect("Content-Type", /json/)
+  // .expect("Content-Length", "15")
+  .expect(200)
+  .end(function (err, res) {
+    if (err) throw err;
+    console.log(res.header);
+  });
