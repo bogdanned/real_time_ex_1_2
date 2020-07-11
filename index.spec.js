@@ -4,7 +4,7 @@ const app = require("./server/app");
 describe("The http server responds fast to user requests regarding the load", () => {
   it("responds with json", function (done) {
     request(app)
-      .get("/fibo?n=41")
+      .get("/performance?n=41")
       .set("Accept", "application/json")
       .expect(200)
       .end((err, res) => {

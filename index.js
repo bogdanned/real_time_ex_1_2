@@ -2,7 +2,7 @@ const app = require("./server/app");
 const request = require("supertest");
 
 request(app)
-  .get("/fibo?n=41")
+  .get("/fibo?n=40")
   // .expect("Content-Type", /json/)
   // .expect("Content-Length", "15")
   .expect(200)
