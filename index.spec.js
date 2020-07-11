@@ -1,6 +1,5 @@
 const request = require("supertest");
-const app = require("./utils/app");
-const { assert } = require("console");
+const app = require("./server/app");
 
 describe("The http server responds fast to user requests regarding the load", () => {
   it("responds with json", function (done) {
