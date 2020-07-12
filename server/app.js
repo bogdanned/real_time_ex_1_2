@@ -3,6 +3,7 @@ const responseTime = require("response-time");
 const expensiveTask = require("./utils/expensiveTask");
 
 const { addTask, startWorker, tasksEndpoint } = require("./utils/taskRunner");
+const e = require("express");
 
 const app = express();
 tasksEndpoint(app);
@@ -12,9 +13,8 @@ app.use(responseTime());
 app.get("/", function (req, res) {
   const n = parseInt(req.query.n);
   // heavy server work here
-  addTask(expensiveTask, n);
-  // res.status(200).json({ result });
-  res.json({ status: "task-started" });
+  const result = expensiveTask(n);
+  res.status(200).json({ result: "done" });
 });
 
 module.exports = app;

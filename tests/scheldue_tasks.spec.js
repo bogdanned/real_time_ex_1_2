@@ -4,7 +4,7 @@ const app = require("../server/app");
 describe("Expesive task schelduer", () => {
   it("Scheldues task correctly after a request", function (done) {
     request(app)
-      .get("/?n=40")
+      .get("/?n=5")
       .set("Accept", "application/json")
       .expect(200)
       .end((err, res) => {
@@ -17,7 +17,7 @@ describe("Expesive task schelduer", () => {
       });
 
     request(app)
-      .get("/?n=40")
+      .get("/?n=10")
       .set("Accept", "application/json")
       .expect(200)
       .end((err, res) => {
