@@ -1,15 +1,15 @@
 const express = require("express");
 const responseTime = require("response-time");
-const { expensiveTaskList } = require("./core");
+const expensiveTask = require("./utils/expensiveTask");
 
 const app = express();
 
 app.use(responseTime());
 
-app.get("/performance", function (req, res) {
+app.get("/", function (req, res) {
   const n = parseInt(req.query.n);
   // heavy server work here
-  const result = expensiveTaskList(n);
+  const result = expensiveTask(n);
   res.status(200).json({ result });
 });
 
