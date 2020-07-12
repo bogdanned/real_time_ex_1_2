@@ -2,7 +2,7 @@ const express = require("express");
 const responseTime = require("response-time");
 const expensiveTask = require("./utils/expensiveTask");
 
-const { addTask, startWorker, tasksEndpoint } = require("./utils/taskRunner");
+const { startWorker, tasksEndpoint } = require("./utils/taskRunner");
 const e = require("express");
 
 const app = express();
